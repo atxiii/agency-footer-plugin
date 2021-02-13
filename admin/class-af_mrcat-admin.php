@@ -100,4 +100,11 @@ class Af_mrcat_Admin {
 
 	}
 
+	public function af_mrcat_menu(){
+		add_submenu_page('tools.php','AF MrCat', 'Agency Footer MrCat','manage_options','mf-mrcat',$this->af_mrcat_page);
+	}
+
+	public function af_mrcat_page(){
+		echo 'test';
+	}
 }
