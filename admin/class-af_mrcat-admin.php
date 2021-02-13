@@ -105,6 +105,6 @@ class Af_mrcat_Admin {
 	}
 
 	public function af_mrcat_page(){
-		echo 'test';
+		require_once 'partials/af_mrcat-panel-page.php'
 	}
 }

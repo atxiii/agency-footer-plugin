@@ -13,7 +13,7 @@
  * @package           Af_mrcat
  *
  * @wordpress-plugin
- * Plugin Name:       Agency Footer Mrcat
+ * Plugin Name:       MrCat Agency Footer
  * Plugin URI:        https://mrcatdev.com
  * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
  * Version:           1.0.0
