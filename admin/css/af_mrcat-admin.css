@@ -36,7 +36,6 @@ input#af_mrcat_text {
     width: 100%;
 }
 
-.af_image {}
 
 a.dashicons-before.dashicons-remove.mrcat-rmv {
     position: absolute;
@@ -54,9 +53,10 @@ textarea#af_mrcat_sites {
     margin-top: 10px;
 }
 
-.af_sites label span {
+.af_mrcat_form > div label span {
     color: #303030;
     font-weight: 300;
+    display: block;
 }
 
 .af_mrcat_form button {
