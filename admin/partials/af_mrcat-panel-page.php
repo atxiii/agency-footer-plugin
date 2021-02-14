@@ -13,7 +13,7 @@
 
     <input type="text" name="af_mrcat_text" value="<?php echo get_option('af_mrcat_text'); ?>" placehoder="Add your text here" />
     <a href="#" class="mrcat-upl"><img src="<?php echo $image; ?>" ?></a>
-
+    <a href="#" class="mrcat-rmv">X</a>
     <input type="hidden" id="af_mrcat_logo" name="af_mrcat_logo" value="<?php echo get_option('af_mrcat_logo'); ?>">
     <button type="submit" name="submit">Save</button>
     
