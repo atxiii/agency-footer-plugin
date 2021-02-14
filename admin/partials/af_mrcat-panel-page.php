@@ -18,9 +18,8 @@
         <input type="hidden" id="af_mrcat_logo" name="af_mrcat_logo" value="<?php echo get_option('af_mrcat_logo'); ?>">
     </div>
     <div>
-    <label for="af_mrcat_sites">Allow CROS policy for:<span>Add site to per line</span></label>
-    <textarea name="af_mrcat_sites" id="af_mrcat_sites" cols="30" rows="10"></textarea>
-    
+        <label for="af_mrcat_sites">Allow CROS policy for:<span>Add site to per line</span></label>
+        <textarea name="af_mrcat_sites" id="af_mrcat_sites" cols="30" rows="10"></textarea> 
     </div>
     <button type="submit" name="submit">Save</button>
 </form>

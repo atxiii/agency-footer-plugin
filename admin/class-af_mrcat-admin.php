@@ -116,6 +116,7 @@ class Af_mrcat_Admin {
 	public function af_mrcat_register_setting(){
 		register_setting('af_mrcat_setting', 'af_mrcat_text');
 		register_setting('af_mrcat_setting', 'af_mrcat_logo');
+		register_setting('af_mrcat_setting','af_mrcat_sites');
 	}
 
 
