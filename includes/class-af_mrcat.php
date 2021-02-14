@@ -182,8 +182,8 @@ class Af_mrcat {
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 
-		$this->loader->add_action('wp_ajax_af_mrcat_data', $plugin_name, 'af_mrcat_data');
-		$this->loader->add_action('wp_ajax_nopriv_af_mrcat_data', $plugin_name, 'af_mrcat_data');
+		$this->loader->add_action('wp_ajax_af_mrcat_data', $plugin_public, 'af_mrcat_data');
+		$this->loader->add_action('wp_ajax_nopriv_af_mrcat_data', $plugin_public, 'af_mrcat_data');
 	}
 
 	/**
