@@ -57,7 +57,7 @@
 </form>
 
 <div class="output">
-   <pre> <code>
+   <pre>
        
        &ltscript&gt
             const data = {'action': 'af_mrcat_data'};
@@ -66,26 +66,19 @@
                         const agencyDiv = document.createElement('div');
                         agencyDiv.className = "digitalwind-agency-container";
                         agencyDiv.style.textAlign = "center";
-                        let html =  `<a href="${response.domain}" class="digitalwind-link" rel="${response.rel}" title="${response.altOfImage}" target="${response.target}"><p class="digitalwind-agency-text" style="text-align:center;margin:0px auto;font-size:14px">${response.text}</p>`;
+                        let html =  `&lta href="${response.domain}" class="digitalwind-link" rel="${response.rel}" title="${response.altOfImage}" target="${response.target}"&gt&ltp class="digitalwind-agency-text" style="text-align:center;margin:0px auto;font-size:14px"&gt${response.text}&lt/p&gt`;
                         
                         if(response.logo){
-                            html += `<img class="digitalwind-agency-img" src="${response.logo}" width="${response.widthOfImage}" style="margin: 0px auto;" alt="${response.altOfImage}" /></a>`;
+                            html += `&ltimg class="digitalwind-agency-img" src="${response.logo}" width="${response.widthOfImage}" style="margin: 0px auto;" alt="${response.altOfImage}" /&gt&lt/a&lt`;
                         }else{
-                            html += '</a>';
+                            html += '&lt/a&gt';
                         }
-                        
-                
-                
                         agencyDiv.innerHTML = html;
-
                         document.body.append(agencyDiv);
-                
             });
-        
             },3000);
-            
         &lt/script&gt
-    </code></pre>
+    </pre>
 </div>
 
 
