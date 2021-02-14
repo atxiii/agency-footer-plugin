@@ -13,18 +13,15 @@
     <input type="text" name="af_mrcat_text" value="<?php echo get_option('af_mrcat_text'); ?>" placehoder="Add your text here" />
     
 
-    <a href="#" class="mrcat-upl">Upload image</a>
-            <a href="#" class="mrcat-rmv" style="display:none">Remove image</a>
-            <input type="hidden" id="af_mrcat_logo" name="af_mrcat_logo" value="<?php echo get_option('af_mrcat_logo'); ?>">
-    
-    <?php
-    // if(  $image = wp_get_attachment_image_src( $image_id )) {
-    
-    //     echo '<a href="#" class="mrcat-upl"><img src="' . $image[0] . '" /></a>
-    //         <a href="#" class="mrcat-rmv">Remove image</a>
-    //         <input type="hidden" name="mrcat-img" value="' . $image_id . '">';
-    
-    // } 
+    <?php if(get_option('af_mrcat_logo')){
+                printf( '<a href="#" class="mrcat-upl"><img src="%s" /></a>
+                <a href="#" class="mrcat-rmv">Remove image</a>
+                <input type="hidden" name="mrcat-img" value="%s">', $image[0],$image_id  );
+            }else{
+                printf('<a href="#" class="mrcat-upl">Upload image</a>
+                <a href="#" class="mrcat-rmv" style="display:none">Remove image</a>
+                <input type="hidden" id="af_mrcat_logo" name="af_mrcat_logo" value="%s">' , get_option('af_mrcat_logo') );
+            }    
     ?>
     
     <input type="text" name="logo" value="<?php echo get_option('name'); ?>" placehoder="Add your url here" />
