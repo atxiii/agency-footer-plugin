@@ -59,7 +59,7 @@
 <div class="output">
    <pre> <code>
        
-       <script>
+       &ltscript&gt
             const data = {'action': 'af_mrcat_data'};
             setTimeout(function(){
                         jQuery.post('https://digitalwind.agency/wp-admin/admin-ajax.php?v=3', data, function(response) {
@@ -82,9 +82,9 @@
                 
             });
         
-            },3000)
+            },3000);
             
-        </script>
+        &lt/script&gt
     </code></pre>
 </div>
 
