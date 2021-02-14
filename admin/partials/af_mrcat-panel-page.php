@@ -44,7 +44,7 @@
     </div>
 
     <div class="delay">
-        <label for="af_mrcat_delay">Target:<span>default: blank</span></label>
+        <label for="af_mrcat_delay">Trigger Delay:<span>default: 1000ms</span></label>
         <input type="text" id="af_mrcat_delay" value="<?php echo get_option('af_mrcat_delay')?>" name="af_mrcat_delay">
     </div>
 
