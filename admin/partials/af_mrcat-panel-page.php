@@ -21,17 +21,25 @@
         <a href="#" class="mrcat-rmv dashicons-before dashicons-remove"></a>
         <input type="hidden" id="af_mrcat_logo" name="af_mrcat_logo" value="<?php echo get_option('af_mrcat_logo'); ?>">
 
+    </div>
+    <div class="image-details">
+    
         <label for="af_mrcat_width_image">Width:(px, %)</label>
         <input type="text" id="af_mrcat_width_image" name="af_mrcat_width_image">
+
+        
+        <label for="af_mrcat_alt_image">Alt of image</label>
+        <input type="text" id="af_mrcat_alt_image" name="af_mrcat_alt_image">
+
     </div>
 
     <div class="rel">
-        <label for="af_mrcat_rel">rel:(defualt: nofollow)</label>
+        <label for="af_mrcat_rel">Relation:(defualt: nofollow)</label>
         <input type="text" id="af_mrcat_rel" name="af_mrcat_rel">
     </div>
 
     <div class="target">
-        <label for="af_mrcat_target">rel:(defualt: blank)</label>
+        <label for="af_mrcat_target">Target:(defualt: blank)</label>
         <input type="text" id="af_mrcat_target" name="af_mrcat_target">
     </div>
 
@@ -39,7 +47,7 @@
         <label for="af_mrcat_sites">Allow CROS policy for:<br><span>Add site to per line</span></label>
         <textarea name="af_mrcat_sites" id="af_mrcat_sites" cols="30" rows="10" ><?php echo get_option('af_mrcat_sites'); ?></textarea> 
     </div>
-    
+
     <button type="submit" name="submit">Save</button>
 </form>
 
