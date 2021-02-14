@@ -100,4 +100,7 @@ class Af_mrcat_Public {
 
 	}
 
+	public function af_mrcat_data(){
+		return 'test';
+	}
 }
