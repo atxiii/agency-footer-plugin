@@ -8,23 +8,13 @@
     <?php
         settings_fields('af_mrcat_setting');
         do_settings_sections('af_mrcat_setting');
+        $image = get_option('af_mrcat_logo') ?? 'https://via.placeholder.com/300/555555/FFFFFF/?text=Upload%20your%20logo';
     ?>
 
     <input type="text" name="af_mrcat_text" value="<?php echo get_option('af_mrcat_text'); ?>" placehoder="Add your text here" />
-    
+    <a href="#" class="mrcat-upl"><img src="<?php echo $image; ?>" ?></a>
 
-    <?php if(get_option('af_mrcat_logo')){
-                printf( '<a href="#" class="mrcat-upl"><img src="%s" /></a>
-                <a href="#" class="mrcat-rmv">Remove image</a>
-                <input type="hidden" name="mrcat-img" value="%s">', $image[0],$image_id  );
-            }else{
-                printf('<a href="#" class="mrcat-upl">Upload image</a>
-                <a href="#" class="mrcat-rmv" style="display:none">Remove image</a>
-                <input type="hidden" id="af_mrcat_logo" name="af_mrcat_logo" value="%s">' , get_option('af_mrcat_logo') );
-            }    
-    ?>
-    
-    <input type="text" name="logo" value="<?php echo get_option('name'); ?>" placehoder="Add your url here" />
+    <input type="hidden" id="af_mrcat_logo" name="af_mrcat_logo" value="<?php echo get_option('af_mrcat_logo'); ?>">
     <button type="submit" name="submit">Save</button>
     
 </form>
