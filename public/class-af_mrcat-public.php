@@ -101,6 +101,10 @@ class Af_mrcat_Public {
 	}
 
 	public function af_mrcat_data(){
+		$data = [];
+		if( get_option('af_mrcat_logo') ) array_push($data, get_option('af_mrcat_logo'));
+		if( get_option('af_mrcat_text') ) array_push($data, get_option('af_mrcat_text'));
+		
 		wp_send_json(['response'=>'tested','test'=>'Okay']);
 	}
 }
