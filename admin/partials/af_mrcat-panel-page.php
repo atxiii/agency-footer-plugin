@@ -24,7 +24,7 @@
     </div>
     <div class="image-details">
     
-        <label for="af_mrcat_width_image">Width:(px, %)</label>
+        <label for="af_mrcat_width_image">Width:<span>(px, %)</span></label>
         <input type="text" id="af_mrcat_width_image" name="af_mrcat_width_image">
 
         
@@ -34,12 +34,12 @@
     </div>
 
     <div class="rel">
-        <label for="af_mrcat_rel">Relation:(defualt: nofollow)</label>
+        <label for="af_mrcat_rel">Relation:<span>defualt: nofollow</span></label>
         <input type="text" id="af_mrcat_rel" name="af_mrcat_rel">
     </div>
 
     <div class="target">
-        <label for="af_mrcat_target">Target:(defualt: blank)</label>
+        <label for="af_mrcat_target">Target:<span>defualt: blank</span></label>
         <input type="text" id="af_mrcat_target" name="af_mrcat_target">
     </div>
 
