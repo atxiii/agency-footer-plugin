@@ -109,7 +109,14 @@ class Af_mrcat_Admin {
 	}
 
 	public function af_mrcat_load_media($page){
-		if($page = 'tool.php') wp_enqueue_media();
+		if($page = 'tools.php') wp_enqueue_media();
 		var_dump($page);
 	}
+
+	public function af_mrcat_register_setting(){
+		register_setting('af_mrcat_setting', 'text');
+		register_setting('af_mrcat_setting', 'logo');
+	}
+
+
 }

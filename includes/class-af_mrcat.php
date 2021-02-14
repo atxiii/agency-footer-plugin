@@ -157,12 +157,14 @@ class Af_mrcat {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
-		// admin panel
+	
 		$this->loader->add_action('admin_menu', $plugin_admin, 'af_mrcat_menu');
 
-		// upload media
-		add_action( 'admin_enqueue_scripts', 'af_mrcat_load_media' );
+		$this->loader->add_action('admin_enqueue_scripts', 'af_mrcat_load_media' );
 
+		$this->loader->add_action('admin_init', 'af_mrcat_register_setting');
+
+		
 
 	}
 
