@@ -50,6 +50,7 @@
 				multiple: false
 			}).on('select', function() { // it also has "open" and "close" events
 				var attachment = custom_uploader.state().get('selection').first().toJSON();
+				$('#af_mrcat_logo').val(attachment.url) ;
 				button.html('<img src="' + attachment.url + '">').next().val(attachment.id).next().show();
 			}).open();
 	 
