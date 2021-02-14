@@ -56,4 +56,36 @@
     <button type="submit" name="submit">Save</button>
 </form>
 
+<div class="output">
+   <pre> <code>
+       
+       <script>
+            const data = {'action': 'af_mrcat_data'};
+            setTimeout(function(){
+                        jQuery.post('https://digitalwind.agency/wp-admin/admin-ajax.php?v=3', data, function(response) {
+                        const agencyDiv = document.createElement('div');
+                        agencyDiv.className = "digitalwind-agency-container";
+                        agencyDiv.style.textAlign = "center";
+                        let html =  `<a href="${response.domain}" class="digitalwind-link" rel="${response.rel}" title="${response.altOfImage}" target="${response.target}"><p class="digitalwind-agency-text" style="text-align:center;margin:0px auto;font-size:14px">${response.text}</p>`;
+                        
+                        if(response.logo){
+                            html += `<img class="digitalwind-agency-img" src="${response.logo}" width="${response.widthOfImage}" style="margin: 0px auto;" alt="${response.altOfImage}" /></a>`;
+                        }else{
+                            html += '</a>';
+                        }
+                        
+                
+                
+                        agencyDiv.innerHTML = html;
+
+                        document.body.append(agencyDiv);
+                
+            });
+        
+            },3000)
+            
+        </script>
+    </code></pre>
+</div>
+
 
