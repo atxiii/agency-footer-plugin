@@ -43,6 +43,11 @@
         <input type="text" id="af_mrcat_target" value="<?php echo get_option('af_mrcat_target')?>" name="af_mrcat_target">
     </div>
 
+    <div class="delay">
+        <label for="af_mrcat_delay">Target:<span>default: blank</span></label>
+        <input type="text" id="af_mrcat_delay" value="<?php echo get_option('af_mrcat_delay')?>" name="af_mrcat_delay">
+    </div>
+
     <div class="af_sites">
         <label for="af_mrcat_sites">Allow CROS policy for:<br><span>Add site to per line</span></label>
         <textarea name="af_mrcat_sites" id="af_mrcat_sites" cols="30" rows="10" ><?php echo get_option('af_mrcat_sites'); ?></textarea> 

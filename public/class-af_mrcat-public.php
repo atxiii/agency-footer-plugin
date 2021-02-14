@@ -107,7 +107,9 @@ class Af_mrcat_Public {
 			'target'=>get_option('af_mrcat_target')? get_option('af_mrcat_target'): '_blank',
 			'logo'=> get_option('af_mrcat_logo') ? get_option('af_mrcat_logo') : '',
 			'text'=> get_option('af_mrcat_text') ? get_option('af_mrcat_text') : '',
-			'widthOfImage' => get_option('af_mrcat_width_image') ? get_option('af_mrcat_width_image') : '100px'
+			'widthOfImage' => get_option('af_mrcat_width_image') ? get_option('af_mrcat_width_image') : '100px',
+			'altOfImage' => get_option('af_mrcat_alt_image') ? get_option('af_mrcat_alt_image') : '',
+			'delay'=>get_option('af_mrcat_delay') ? get_option('af_mrcat_delay') : '',
 		];
 
 		wp_send_json($data);

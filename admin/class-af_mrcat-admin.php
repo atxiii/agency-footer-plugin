@@ -121,6 +121,7 @@ class Af_mrcat_Admin {
 		register_setting('af_mrcat_setting','af_mrcat_target');
 		register_setting('af_mrcat_setting','af_mrcat_width_image');
 		register_setting('af_mrcat_setting','af_mrcat_alt_image');
+		register_setting('af_mrcat_setting','af_mrcat_delay');
 	}
 
 

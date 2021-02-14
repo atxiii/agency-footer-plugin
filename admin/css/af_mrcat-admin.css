@@ -24,13 +24,6 @@
     max-width: 50%;
 }
 
-input#af_mrcat_text {
-    flex: 1;
-    border: none;
-    background: #f4f5f9;
-    box-shadow: 0px 0px 4px 0px rgb(177 50 29 / 10%);
-}
-
 .af_image img {
     object-fit: cover;
     width: 100%;
