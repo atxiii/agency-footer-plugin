@@ -9,15 +9,15 @@
         <?php
             settings_fields('af_mrcat_setting');
             do_settings_sections('af_mrcat_setting');
-            $image = get_option('af_mrcat_logo') ? get_option('af_mrcat_logo') : 'https://via.placeholder.com/300/555555/FFFFFF/?text=Upload%20your%20logo';
+            $image = get_option('af_mrcat_logo') ? get_option('af_mrcat_logo') : 'https://via.placeholder.com/320x90/555555/FFFFFF/?text=Upload%20your%20logo';
         ?>
         
         <label for="af_mrcat_text">Your text footer</label>
         <input type="text" name="af_mrcat_text" id="af_mrcat_text" value="<?php echo get_option('af_mrcat_text'); ?>" placehoder="Add your text here" />
     </div>
     <div class="af_image">
-        <a href="#" class="mrcat-upl"><img src="<?php echo $image; ?>" ?></a>
-        <a href="#" class="mrcat-rmv">X</a>
+        <a href="#" class="mrcat-upl"><img src="<?php echo $image; ?>" ></a>
+        <a href="#" class="mrcat-rmv dashicons-before dashicons-remove"></a>
         <input type="hidden" id="af_mrcat_logo" name="af_mrcat_logo" value="<?php echo get_option('af_mrcat_logo'); ?>">
     </div>
     <div class="af_sites">

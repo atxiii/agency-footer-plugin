@@ -1,4 +1,69 @@
-/**
- * All of the CSS for your admin-specific functionality should be
- * included in this file.
- */
+.af_mrcat_form {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 320px;
+    background:#fff;
+    padding:20px;
+    align-self: center;
+}
+.af_mrcat_form > div{
+    display:flex;
+    flex:1 1 100%;
+    max-width:100%;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    align-items: center;
+    position: relative;
+}
+
+.af_mrcat_form div label {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    max-width: 50%;
+}
+
+input#af_mrcat_text {
+    flex: 1;
+    border: none;
+    background: #f4f5f9;
+    box-shadow: 0px 0px 4px 0px rgb(177 50 29 / 10%);
+}
+
+.af_image img {
+    object-fit: cover;
+    width: 100%;
+}
+
+.af_image {}
+
+a.dashicons-before.dashicons-remove.mrcat-rmv {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000;
+    /* border-radius: 50%; */
+    padding: 5px;
+    text-decoration: none;
+    color: #f00;
+}
+
+textarea#af_mrcat_sites {
+    flex: 1 1 100%;
+    margin-top: 10px;
+}
+
+.af_sites label span {
+    color: #303030;
+    font-weight: 300;
+}
+
+.af_mrcat_form button {
+    background: #67c667;
+    color: #fff;
+    border: none;
+    display: block;
+    width: 100%;
+    padding: 8px 0px;
+}
