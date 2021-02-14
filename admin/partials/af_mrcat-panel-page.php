@@ -19,7 +19,7 @@
     </div>
     <div>
         <label for="af_mrcat_sites">Allow CROS policy for:<span>Add site to per line</span></label>
-        <textarea name="af_mrcat_sites" id="af_mrcat_sites" cols="30" rows="10" value="<?php echo get_option('af_mrcat_sites') ?>"></textarea> 
+        <textarea name="af_mrcat_sites" id="af_mrcat_sites" cols="30" rows="10" ><?php echo get_option('af_mrcat_sites'); ?></textarea> 
     </div>
     <button type="submit" name="submit">Save</button>
 </form>
