@@ -117,6 +117,9 @@ class Af_mrcat_Admin {
 		register_setting('af_mrcat_setting', 'af_mrcat_text');
 		register_setting('af_mrcat_setting', 'af_mrcat_logo');
 		register_setting('af_mrcat_setting','af_mrcat_sites');
+		register_setting('af_mrcat_setting','af_mrcat_rel');
+		register_setting('af_mrcat_setting','af_mrcat_target');
+		register_setting('af_mrcat_setting','af_mrcat_width_image');
 	}
 
 

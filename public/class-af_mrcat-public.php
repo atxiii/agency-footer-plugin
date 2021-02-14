@@ -101,10 +101,15 @@ class Af_mrcat_Public {
 	}
 
 	public function af_mrcat_data(){
-		$data = [];
-		if( get_option('af_mrcat_logo') ) array_push($data, get_option('af_mrcat_logo'));
-		if( get_option('af_mrcat_text') ) array_push($data, get_option('af_mrcat_text'));
-		
+		$data = [
+			'domain'=>site_url(),
+			'rel'=> get_option('af_mrcat_rel')? get_option('af_mrcat_rel'): 'nofollow',
+			'target'=>get_option('af_mrcat_target')? get_option('af_mrcat_target'): '_blank',
+			'logo'=> get_option('af_mrcat_logo') ? get_option('af_mrcat_logo') : '',
+			'text'=> get_option('af_mrcat_text') ? get_option('af_mrcat_text') : '',
+			'widthOfImage' => get_option('af_mrcat_width_image') ? get_option('af_mrcat_width_image') : '100px'
+		];
+
 		wp_send_json($data);
 	}
 }
