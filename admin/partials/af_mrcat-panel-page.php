@@ -60,7 +60,7 @@
 
 <div class="output">
    <h2>Copy below statement on clinet's site</h2> 
-   <textarea cols="30" rows="10">  
+   <textarea id="af_mrcat_js_code" cols="30" rows="10">  
       <?php 
       $delay = get_option('af_mrcat_delay') ?  get_option('af_mrcat_delay') : "3000";
       printf ('&ltscript&gt
@@ -84,6 +84,8 @@
   &lt/script&gt',admin_url('admin-ajax.php'), $delay);
   ?>
     </textarea>
+    <button id="af_mrcat_copy">Copy</button>
+
 </div>
 
 </div>

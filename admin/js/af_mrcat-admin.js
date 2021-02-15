@@ -65,6 +65,12 @@
 			button.next().val(''); // emptying the hidden field
 			button.hide().prev().html('Upload image');
 		});
+
+		$('#af_mrcat_copy').on('click',function(){
+			var copyText = document.querySelector("#af_mrcat_js_code");
+			copyText.select();
+			document.execCommand("copy");
+		})
 	 
 	});
 
