@@ -70,6 +70,10 @@
 			var copyText = document.querySelector("#af_mrcat_js_code");
 			copyText.select();
 			document.execCommand("copy");
+			$(this).text('copied');
+			setTimeout(()=>{
+				$(this).text('copy');
+			},5000)
 		})
 	 
 	});

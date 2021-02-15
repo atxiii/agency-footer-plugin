@@ -1,7 +1,7 @@
 .af_mrcat_form {
     display: flex;
     flex-wrap: wrap;
-    max-width: 320px;
+    max-width: 45%;
     background:#fff;
     padding:20px;
     align-self: center;
@@ -41,7 +41,6 @@ a.dashicons-before.dashicons-remove.mrcat-rmv {
     top: 0;
     left: 0;
     background: #000;
-    /* border-radius: 50%; */
     padding: 5px;
     text-decoration: none;
     color: #f00;
@@ -58,7 +57,7 @@ textarea#af_mrcat_sites {
     display: block;
 }
 
-.af_mrcat_form button {
+.af_mrcat_wrap button {
     background: #67c667;
     color: #fff;
     border: none;
@@ -66,3 +65,19 @@ textarea#af_mrcat_sites {
     width: 100%;
     padding: 8px 0px;
 }
+
+.af_mrcat_wrap .output {
+    margin-right: 30px;
+    background: #fff;
+    width: 43%;
+    padding: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+textarea#af_mrcat_js_code {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
