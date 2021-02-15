@@ -60,7 +60,7 @@ define('AF_MRCAT_TEXT_DOMAIN','af_mrcat');
 
 <div class="output">
    <h2><?php _e('Please copy the code in client\'s site',AF_MRCAT_TEXT_DOMAIN); ?> </h2> 
-   <textarea id="js_code" cols="30" rows="10">  
+   <textarea id="af_mrcat_js_code" cols="30" rows="10">  
       <?php 
       $delay = get_option('af_mrcat_delay') ?  get_option('af_mrcat_delay') : "3000";
       printf ('&ltscript&gt
