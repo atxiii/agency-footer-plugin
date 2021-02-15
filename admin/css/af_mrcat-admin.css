@@ -5,6 +5,7 @@
     background:#fff;
     padding:20px;
     align-self: center;
+    margin-right:auto;
 }
 .af_mrcat_form > div{
     display:flex;
@@ -81,3 +82,7 @@ textarea#af_mrcat_js_code {
     margin-bottom: 10px;
 }
 
+.af_mrcat_wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
