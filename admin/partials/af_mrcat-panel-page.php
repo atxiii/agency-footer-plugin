@@ -26,7 +26,7 @@
     </div>
     <div class="image-details">
         <div class="inner-flex">
-            <label for="af_mrcat_width_image">Width:<span>px, % (default: 100px)</span></label>
+            <label for="af_mrcat_width_image"><?php _e('Width:',AF_MRCAT_TEXT_DOMAIN); ?><span><?php _e('px, % (default: 100px)',AF_MRCAT_TEXT_DOMAIN) ?></span></label>
             <input type="text" id="af_mrcat_width_image" value="<?php echo get_option('af_mrcat_width_image')?>" name="af_mrcat_width_image">
         </div>
         <div class="inner-flex">
