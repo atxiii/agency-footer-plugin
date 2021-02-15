@@ -90,8 +90,8 @@ textarea#af_mrcat_js_code {
 @media (max-width:768px){
     .af_mrcat_form, .af_mrcat_wrap .output,input, label{
         width:100%;
-        max-width: 100%;
-        margin:auto;
+        max-width: 100% impo !important;
+        margin:10px 0px;
     }
     
 }
