@@ -81,7 +81,7 @@
                   document.body.append(agencyDiv);
       });
       },%d);
-  &lt/script&gt',admin_url('admin-ajax.php'), $delay)
+  &lt/script&gt',admin_url('admin-ajax.php'), $delay);
     </textarea>
 </div>
 
