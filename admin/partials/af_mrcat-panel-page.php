@@ -4,6 +4,8 @@
 
 
 <h1>General Setting</h1><br>
+
+<div class="af_mrcat_wrap">
 <form action="options.php" method="post" class="af_mrcat_form">
     <div class="af_text">
         <?php
@@ -57,28 +59,30 @@
 </form>
 
 <div class="output">
-   <pre>
-       
-       &ltscript&gt
-            const data = {'action': 'af_mrcat_data'};
-            setTimeout(function(){
-                        jQuery.post('https://digitalwind.agency/wp-admin/admin-ajax.php?v=3', data, function(response) {
-                        const agencyDiv = document.createElement('div');
-                        agencyDiv.className = "digitalwind-agency-container";
-                        agencyDiv.style.textAlign = "center";
-                        let html =  `&lta href="${response.domain}" class="digitalwind-link" rel="${response.rel}" title="${response.altOfImage}" target="${response.target}"&gt&ltp class="digitalwind-agency-text" style="text-align:center;margin:0px auto;font-size:14px"&gt${response.text}&lt/p&gt`;
-                        
-                        if(response.logo){
-                            html += `&ltimg class="digitalwind-agency-img" src="${response.logo}" width="${response.widthOfImage}" style="margin: 0px auto;" alt="${response.altOfImage}" /&gt&lt/a&lt`;
-                        }else{
-                            html += '&lt/a&gt';
-                        }
-                        agencyDiv.innerHTML = html;
-                        document.body.append(agencyDiv);
-            });
-            },3000);
-        &lt/script&gt
-    </pre>
+   <h2>Copy below statement on clinet's site</h2> 
+   <textarea cols="30" rows="10">  
+      <?php 
+      $delay = get_option('af_mrcat_delay') ?  get_option('af_mrcat_delay') : "3000";
+      printf ('&ltscript&gt
+      const data = {"action": "af_mrcat_data"};
+      setTimeout(function(){
+                  jQuery.post("%s", data, function(response) {
+                  const agencyDiv = document.createElement("div");
+                  agencyDiv.className = "digitalwind-agency-container";
+                  agencyDiv.style.textAlign = "center";
+                  let html =  `&lta href="${response.domain}" class="digitalwind-link" rel="${response.rel}" title="${response.altOfImage}" target="${response.target}"&gt&ltp class="digitalwind-agency-text" style="text-align:center;margin:0px auto;font-size:14px"&gt${response.text}&lt/p&gt`;
+                  
+                  if(response.logo){
+                      html += `&ltimg class="digitalwind-agency-img" src="${response.logo}" width="${response.widthOfImage}" style="margin: 0px auto;" alt="${response.altOfImage}" /&gt&lt/a&lt`;
+                  }else{
+                      html += "&lt/a&gt";
+                  }
+                  agencyDiv.innerHTML = html;
+                  document.body.append(agencyDiv);
+      });
+      },%d);
+  &lt/script&gt',admin_url('admin-ajax.php'), $delay)
+    </textarea>
 </div>
 
-
+</div>
