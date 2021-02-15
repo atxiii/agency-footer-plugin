@@ -35,7 +35,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Rename this for your plugin and update it as you release new versions.
  */
 define( 'AF_MRCAT_VERSION', '1.0.0' );
-define('TEXT_DOMAIN','af_mrcat');
+
 /**
  * The code that runs during plugin activation.
  * This action is documented in includes/class-af_mrcat-activator.php

@@ -1,5 +1,5 @@
 <?php
-
+define('AF_MRCAT_TEXT_DOMAIN','af_mrcat');
 ?>
 
 
