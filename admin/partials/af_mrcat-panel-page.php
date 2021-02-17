@@ -50,10 +50,24 @@ define('AF_MRCAT_TEXT_DOMAIN','af_mrcat');
         <input type="text" id="af_mrcat_delay" value="<?php echo get_option('af_mrcat_delay')?>" name="af_mrcat_delay">
     </div>
 
+
+
     <div class="af_sites">
-        <label for="af_mrcat_sites"><?php _e('Allow CROS policy for:',AF_MRCAT_TEXT_DOMAIN) ?><br><span><?php _e('Add site to per line',AF_MRCAT_TEXT_DOMAIN); ?></span></label>
-        <textarea name="af_mrcat_sites" id="af_mrcat_sites" cols="30" rows="10" ><?php echo get_option('af_mrcat_sites'); ?></textarea> 
+        <div class="inner-flex">
+            <label for="">CORS HEADER<span>Allow the server to indicate any other origins if you have error CORS policy in client's site.</span></label>
+            
+            <input type="radio" name="af_mrcat_cors" value="af_mrcat_cors_all" id="af_mrcat_cors_all">
+            <label for="af_mrcat_cors_all">All sites</label>
+            
+            <input type="radio" name="af_mrcat_cors" value="af_mrcat_cors_custom" id="af_mrcat_cors_custom">
+            <label for="af_mrcat_cors_custom">Custom</label>
+        </div>
+        <div class="inner-flex">
+            <label for="af_mrcat_sites"><?php _e('Allow CROS policy for:',AF_MRCAT_TEXT_DOMAIN) ?><br><span><?php _e('Add site to per line',AF_MRCAT_TEXT_DOMAIN); ?></span></label>
+            <textarea name="af_mrcat_sites" id="af_mrcat_sites" cols="30" rows="10" ><?php echo get_option('af_mrcat_sites'); ?></textarea> 
+        </div>
     </div>
+
 
     <button type="submit" name="submit">Save</button>
 </form>

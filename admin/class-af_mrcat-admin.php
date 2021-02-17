@@ -122,12 +122,12 @@ class Af_mrcat_Admin {
 		register_setting('af_mrcat_setting','af_mrcat_width_image');
 		register_setting('af_mrcat_setting','af_mrcat_alt_image');
 		register_setting('af_mrcat_setting','af_mrcat_delay');
+		register_setting('af_mrcat_setting','af_mrcat_cors');
 	}
 
 	public function af_mrcat_http_headers_option(){
 		$lines = array();
-		$lines[] = '
-		<IfModule mod_headers.c>
+		$lines[] = '<IfModule mod_headers.c>
 			<IfModule mod_setenvif.c>
 				SetEnvIf Origin "^(.+)$" CORS=$0
 			</IfModule>

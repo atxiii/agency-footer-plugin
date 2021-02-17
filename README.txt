@@ -8,7 +8,9 @@ Stable tag: 4.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Here is a short description of the plugin.  This should be no more than 150 characters.  No markup here.
+As an agency, we want to add our brand to our client site. Sometimes we need to update our logo or text, so we need to make the latest changes one by one.
+So we need a plugin that gives us the ability to update our text and logo for all clients without affecting page speed.
+MrCat Agency Footer plugin helps you that do it.
 
 == Description ==
 
