@@ -124,5 +124,21 @@ class Af_mrcat_Admin {
 		register_setting('af_mrcat_setting','af_mrcat_delay');
 	}
 
+	public function af_mrcat_http_headers_option(){
+		$lines = array();
+		$lines[] = '
+		<IfModule mod_headers.c>
+			<IfModule mod_setenvif.c>
+				SetEnvIf Origin "^(.+)$" CORS=$0
+			</IfModule>
+			Header set Access-Control-Allow-Origin %{CORS}e env=CORS
+			Header set Access-Control-Allow-Credentials "true" env=CORS
+			<FilesMatch "\.(php|html)$">
+			</FilesMatch>
+	  	</IfModule>';
+		return insert_with_markers(get_home_path().'.htaccess', "httpHeader" , $lines );
+
+	}
+
 
 }

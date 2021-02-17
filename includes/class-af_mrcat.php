@@ -164,7 +164,8 @@ class Af_mrcat {
 
 		$this->loader->add_action('admin_init', $plugin_admin,'af_mrcat_register_setting');
 
-
+		$this->loader->add_action('added_option', $plugin_admin, 'af_mrcat_http_headers_option');
+		$this->loader->add_action('updated_option', $plugin_admin, 'af_mrcat_http_headers_option');
 
 	}
 
@@ -183,7 +184,7 @@ class Af_mrcat {
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 
 		$this->loader->add_action('wp_ajax_af_mrcat_data', $plugin_public, 'af_mrcat_data');
-		
+
 		$this->loader->add_action('wp_ajax_nopriv_af_mrcat_data', $plugin_public, 'af_mrcat_data');
 	}
 
