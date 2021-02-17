@@ -153,7 +153,7 @@ class Af_mrcat_Admin {
 			</IfModule>';
 			return insert_with_markers(get_home_path().'.htaccess', "httpHeader" , $lines );
 		}else if(!empty($this->custom_sites)){
-			add_action('send_headers', array($this, 'af_mrcat_custom_cors');
+			add_action('send_headers', array($this, 'af_mrcat_custom_cors'));
 		}
 		
 
