@@ -153,6 +153,8 @@ class Af_mrcat {
 	private function define_admin_hooks() {
 
 		$plugin_admin = new Af_mrcat_Admin( $this->get_plugin_name(), $this->get_version() );
+		$cors_mode = Af_mrcat_Admin::cors_mode();
+		
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
@@ -164,8 +166,12 @@ class Af_mrcat {
 
 		$this->loader->add_action('admin_init', $plugin_admin,'af_mrcat_register_setting');
 
-		$this->loader->add_action('added_option', $plugin_admin, 'af_mrcat_http_headers_option');
-		$this->loader->add_action('updated_option', $plugin_admin, 'af_mrcat_http_headers_option');
+
+		if($cors_mode == 'all'){
+			$this->loader->add_action('admin_init', $plugin_admin, 'cors_mode_all');
+		}else ($cors_mode == 'custom'){
+			$this->loader->add_action('admin_init', $plugin_admin, 'cors_mode_custom');
+		}	
 
 	}
 

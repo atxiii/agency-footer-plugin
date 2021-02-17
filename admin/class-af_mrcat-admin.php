@@ -61,7 +61,7 @@ class Af_mrcat_Admin {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
-		$this->custom_sites = get_option('af_mrcat_custom_cors');
+		$this->custom_sites = get_option('af_mrcat_sites');
 
 	}
 
@@ -136,13 +136,17 @@ class Af_mrcat_Admin {
 		register_setting('af_mrcat_setting','af_mrcat_cors');
 	}
 
-	public function af_mrcat_http_headers_option(){
-		$cors = get_option('af_mrcat_cors')? get_option('af_mrcat_cors') : null;
-		
+	public static function cors_mode(){
+		$cors = get_option('af_mrcat_cors');
+		if($cors == 'af_mrcat_cors_all') return 'all';
+		if($cors == 'af_mrcat_cors_custom') return 'custom';
+		return $cors;
+	}
 
-		if($cors == 'af_mrcat_cors_all'){
-			$lines = array();
-			$lines[] = '<IfModule mod_headers.c>
+	public static function cors_mode_all(){
+		$lines = array();
+			
+		$lines[] = '<IfModule mod_headers.c>
 				<IfModule mod_setenvif.c>
 					SetEnvIf Origin "^(.+)$" CORS=$0
 				</IfModule>
@@ -151,22 +155,17 @@ class Af_mrcat_Admin {
 				<FilesMatch "\.(php|html)$">
 				</FilesMatch>
 			</IfModule>';
-			return insert_with_markers(get_home_path().'.htaccess', "httpHeader" , $lines );
-		}else if(!empty($this->custom_sites)){
-			add_action('send_headers', array($this, 'af_mrcat_custom_cors'));
-		}
+			
+		return insert_with_markers(get_home_path().'.htaccess', "httpHeader" , $lines );
 		
-
 	}
 
-	public function af_mrcat_custom_cors(){
-		$sites = explode('\n', $this->custom_sites);
+	public static function cors_mode_custom(){
 		insert_with_markers(get_home_path().'.htaccess', "httpHeader" , array() );
+		$sites = explode('\n', $this->custom_sites);
 		if(in_array($sites, get_http_origin() )){
 			header(sprintf("Access-Control-Allow-Origin: %s",get_http_origin()));
 		}
-
 	}
-
 
 }
