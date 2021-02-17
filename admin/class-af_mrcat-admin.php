@@ -137,7 +137,7 @@ class Af_mrcat_Admin {
 	}
 
 	public function af_mrcat_http_headers_option(){
-		$cors = get_option('af_mrcat_cors')? get_option('af_mrcat_cors') : return;
+		$cors = get_option('af_mrcat_cors')? get_option('af_mrcat_cors') : null;
 		var_dump(get_http_origin());
 
 		if($cors == 'af_mrcat_cors_all'){
