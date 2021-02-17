@@ -161,10 +161,9 @@ class Af_mrcat_Admin {
 
 	public function af_mrcat_custom_cors(){
 		$sites = explode('\n', $this->custom_sites);
-		
+		insert_with_markers(get_home_path().'.htaccess', "httpHeader" , array() );
 		if(in_array($sites, get_http_origin() )){
 			header(sprintf("Access-Control-Allow-Origin: %s",get_http_origin()));
-			insert_with_markers(get_home_path().'.htaccess', "httpHeader" , array() );
 		}
 
 	}
