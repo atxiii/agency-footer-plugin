@@ -31,6 +31,16 @@ class Af_mrcat_Admin {
 	 */
 	private $plugin_name;
 
+	
+	/**
+	 * The Custom CORS Sites.
+	 *
+	 * @since    1.0.0
+	 * @access   private
+	 * @var      string    $custom_sites  The Custom CORS Sites.  
+	 */
+	private $custom_sites;
+
 	/**
 	 * The version of this plugin.
 	 *
@@ -51,6 +61,7 @@ class Af_mrcat_Admin {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
+		$this->custom_sites = get_option('af_mrcat_custom_cors');
 
 	}
 
@@ -126,17 +137,34 @@ class Af_mrcat_Admin {
 	}
 
 	public function af_mrcat_http_headers_option(){
-		$lines = array();
-		$lines[] = '<IfModule mod_headers.c>
-			<IfModule mod_setenvif.c>
-				SetEnvIf Origin "^(.+)$" CORS=$0
-			</IfModule>
-			Header set Access-Control-Allow-Origin %{CORS}e env=CORS
-			Header set Access-Control-Allow-Credentials "true" env=CORS
-			<FilesMatch "\.(php|html)$">
-			</FilesMatch>
-	  	</IfModule>';
-		return insert_with_markers(get_home_path().'.htaccess', "httpHeader" , $lines );
+		$cors = get_option('af_mrcat_cors')? get_option('af_mrcat_cors') : return;
+		
+
+		if($cors == 'af_mrcat_cors_all'){
+			$lines = array();
+			$lines[] = '<IfModule mod_headers.c>
+				<IfModule mod_setenvif.c>
+					SetEnvIf Origin "^(.+)$" CORS=$0
+				</IfModule>
+				Header set Access-Control-Allow-Origin %{CORS}e env=CORS
+				Header set Access-Control-Allow-Credentials "true" env=CORS
+				<FilesMatch "\.(php|html)$">
+				</FilesMatch>
+			</IfModule>';
+			return insert_with_markers(get_home_path().'.htaccess', "httpHeader" , $lines );
+		}else if(!empty($this->custom_sites)){
+			add_action('send_headers', array($this, 'af_mrcat_custom_cors');
+		}
+		
+
+	}
+
+	public function af_mrcat_custom_cors(){
+		$sites = explode('\n', $this->custom_sites);
+
+		if(in_array($sites, get_http_origin()){
+			header(sprintf("Access-Control-Allow-Origin: %s",get_http_origin()));
+		}
 
 	}
 

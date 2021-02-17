@@ -87,6 +87,15 @@ textarea#af_mrcat_js_code {
     flex-wrap: wrap;
 }
 
+input#af_mrcat_cors_custom:checked ~ .af-mrcat-custom-sites {
+    display: block;
+}
+
+.af-mrcat-custom-sites.inner-flex{
+    display: none ;
+}
+
+
 @media (max-width:768px){
     .af_mrcat_form, .af_mrcat_wrap .output,input, label{
         width:100%;
