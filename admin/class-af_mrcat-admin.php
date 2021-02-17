@@ -164,6 +164,7 @@ class Af_mrcat_Admin {
 		
 		if(in_array($sites, get_http_origin() )){
 			header(sprintf("Access-Control-Allow-Origin: %s",get_http_origin()));
+			insert_with_markers(get_home_path().'.htaccess', "httpHeader" , array() );
 		}
 
 	}
