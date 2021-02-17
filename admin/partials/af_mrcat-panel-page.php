@@ -54,10 +54,10 @@ define('AF_MRCAT_TEXT_DOMAIN','af_mrcat');
         <div class="inner-flex">
             <label for=""><?php _e('CORS HEADER',AF_MRCAT_TEXT_DOMAIN); ?><span><?php _e('Allow the server to indicate any other origins if you have error CORS policy in client\'s site.',AF_MRCAT_TEXT_DOMAIN); ?></span></label>
             <div>
-                <input type="radio" name="af_mrcat_cors" value="af_mrcat_cors_all" id="af_mrcat_cors_all" <?php if(get_option('af_mrcat_delay')=='af_mrcat_cors_all') echo 'checked'; ?> >
+                <input type="radio" name="af_mrcat_cors" value="af_mrcat_cors_all" id="af_mrcat_cors_all" <?php if(get_option('af_mrcat_cors')=='af_mrcat_cors_all') echo 'checked'; ?> >
                 <label for="af_mrcat_cors_all"><?php _e('All',AF_MRCAT_TEXT_DOMAIN); ?></label>
                 
-                <input type="radio" name="af_mrcat_cors" value="af_mrcat_cors_custom" id="af_mrcat_cors_custom" <?php if(get_option('af_mrcat_delay')=='af_mrcat_cors_custom') echo 'checked'; ?>>
+                <input type="radio" name="af_mrcat_cors" value="af_mrcat_cors_custom" id="af_mrcat_cors_custom" <?php if(get_option('af_mrcat_cors')=='af_mrcat_cors_custom') echo 'checked'; ?>>
                 <label for="af_mrcat_cors_custom"><?php _e('Custom',AF_MRCAT_TEXT_DOMAIN); ?></label>
             </div>
         </div>
