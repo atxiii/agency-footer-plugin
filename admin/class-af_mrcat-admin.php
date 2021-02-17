@@ -138,7 +138,7 @@ class Af_mrcat_Admin {
 
 	public function af_mrcat_http_headers_option(){
 		$cors = get_option('af_mrcat_cors')? get_option('af_mrcat_cors') : null;
-		var_dump(get_http_origin());
+		
 
 		if($cors == 'af_mrcat_cors_all'){
 			$lines = array();
@@ -161,7 +161,7 @@ class Af_mrcat_Admin {
 
 	public function af_mrcat_custom_cors(){
 		$sites = explode('\n', $this->custom_sites);
-		var_dump($sites);
+		
 		if(in_array($sites, get_http_origin() )){
 			header(sprintf("Access-Control-Allow-Origin: %s",get_http_origin()));
 		}
