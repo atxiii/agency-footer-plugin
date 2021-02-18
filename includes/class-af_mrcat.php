@@ -158,7 +158,6 @@ class Af_mrcat {
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
-
 	
 		$this->loader->add_action('admin_menu', $plugin_admin, 'af_mrcat_menu');
 
@@ -170,7 +169,7 @@ class Af_mrcat {
 		if($cors_mode == 'all'){
 			$this->loader->add_action('admin_init', $plugin_admin, 'cors_mode_all');
 		}else ($cors_mode == 'custom'){
-			$this->loader->add_action('admin_init', $plugin_admin, 'cors_mode_custom');
+			$this->loader->add_action('send_headers', $plugin_admin, 'cors_mode_custom');
 		}	
 
 	}
