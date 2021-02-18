@@ -139,10 +139,7 @@ class Af_mrcat_Admin {
 	public static function cors_mode(){
 		$cors = get_option('af_mrcat_cors');
 		if($cors == 'af_mrcat_cors_all') return 'all';
-		if($cors == 'af_mrcat_cors_custom'){
-			insert_with_markers(get_home_path().'.htaccess', "httpHeader" , array() );	
-			return 'custom';
-		} 
+		if($cors == 'af_mrcat_cors_custom') return 'custom';
 		return $cors;
 	}
 
@@ -161,6 +158,10 @@ class Af_mrcat_Admin {
 			
 		return insert_with_markers(get_home_path().'.htaccess', "httpHeader" , $lines );
 		
+	}
+
+	public static function disable_cors_mode_all(){
+		return insert_with_markers(get_home_path().'.htaccess', "httpHeader" , array() );	
 	}
 
 	public static function cors_mode_custom(){
