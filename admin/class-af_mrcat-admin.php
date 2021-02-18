@@ -139,7 +139,10 @@ class Af_mrcat_Admin {
 	public static function cors_mode(){
 		$cors = get_option('af_mrcat_cors');
 		if($cors == 'af_mrcat_cors_all') return 'all';
-		if($cors == 'af_mrcat_cors_custom') return 'custom';
+		if($cors == 'af_mrcat_cors_custom'){
+			insert_with_markers(get_home_path().'.htaccess', "httpHeader" , array() );	
+			return 'custom';
+		} 
 		return $cors;
 	}
 
@@ -161,7 +164,7 @@ class Af_mrcat_Admin {
 	}
 
 	public static function cors_mode_custom(){
-		insert_with_markers(get_home_path().'.htaccess', "httpHeader" , array() );
+		
 		$sites = explode('\n', $this->custom_sites);
 		if(in_array($sites, get_http_origin() )){
 			header(sprintf("Access-Control-Allow-Origin: %s",get_http_origin()));
