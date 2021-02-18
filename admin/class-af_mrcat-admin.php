@@ -167,7 +167,7 @@ class Af_mrcat_Admin {
 	public static function cors_mode_custom(){
 		
 		$sites = explode('\n', $this->custom_sites);
-		if(in_array($sites, get_http_origin() )){
+		if(in_array( get_http_origin(), $sites)){
 			header(sprintf("Access-Control-Allow-Origin: %s",get_http_origin()));
 		}
 	}
