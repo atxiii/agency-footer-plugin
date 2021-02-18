@@ -174,9 +174,9 @@ class Af_mrcat_Admin {
 		}
 
 		if (empty($sites)) {
-			header(sprintf("%s: *", $key));
-			header(sprintf("Access-Control-Allow-Origin: %s",get_http_origin()));
+			header("Access-Control-Allow-Origin: *");
 		}
+
 	}
 
 }
