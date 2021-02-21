@@ -110,6 +110,7 @@ class Af_mrcat_Public {
 			'widthOfImage' => get_option('af_mrcat_width_image') ? get_option('af_mrcat_width_image') : '100px',
 			'altOfImage' => get_option('af_mrcat_alt_image') ? get_option('af_mrcat_alt_image') : '',
 			'delay'=>get_option('af_mrcat_delay') ? get_option('af_mrcat_delay') : '',
+			'entery'=>get_http_origin()
 		];
 
 		wp_send_json($data);

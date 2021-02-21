@@ -121,7 +121,6 @@ class Af_mrcat_Admin {
 
 	public function af_mrcat_load_media($page){
 		if($page == 'tools.php') wp_enqueue_media();
-		
 	}
 
 	public function af_mrcat_register_setting(){
@@ -167,6 +166,7 @@ class Af_mrcat_Admin {
 	public static function cors_mode_custom(){
 		
 		$sites = explode('\n', $this->custom_sites);
+		
 		if(is_array($sites) && in_array( get_http_origin(), $sites)){
 			header(sprintf("Access-Control-Allow-Origin: %s",get_http_origin()));
 			header( 'Access-Control-Allow-Credentials: true' );
