@@ -165,7 +165,7 @@ class Af_mrcat_Admin {
 
 	public static function cors_mode_custom(){
 		
-		$sites = explode("\n", $this->custom_sites);
+		$sites = explode('__', preg_replace('/\s/', '__',  $this->custom_sites));
 		
 		error_log(print_r($sites, true));
 		error_log(in_array( get_http_origin(), $sites));
