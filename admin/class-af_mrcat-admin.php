@@ -167,10 +167,11 @@ class Af_mrcat_Admin {
 		
 		$sites = explode("\n", $this->custom_sites);
 		
+		error_log(print_r($sites, true));
+		error_log(in_array( get_http_origin(), $sites));
 		if(is_array($sites) && in_array( get_http_origin(), $sites)){
 			header(sprintf("Access-Control-Allow-Origin: %s",get_http_origin()));
 			header( 'Access-Control-Allow-Credentials: true' );
-			header("Vary: Origin", false);
 		}
 
 		if (empty($sites)) {
