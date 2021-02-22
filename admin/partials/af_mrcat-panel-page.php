@@ -60,6 +60,7 @@ define('AF_MRCAT_TEXT_DOMAIN','af_mrcat');
                 <input type="radio" name="af_mrcat_cors" value="af_mrcat_cors_custom" id="af_mrcat_cors_custom" <?php if(get_option('af_mrcat_cors')=='af_mrcat_cors_custom') echo 'checked'; ?>>
                 <label for="af_mrcat_cors_custom"><?php _e('Custom',AF_MRCAT_TEXT_DOMAIN); ?></label>
                 <div class="inner-flex af-mrcat-custom-sites" >
+                    <span>e.g: example.com</span>
                     <textarea name="af_mrcat_sites" id="af_mrcat_sites" cols="30" rows="10" ><?php echo get_option('af_mrcat_sites'); ?></textarea> 
                 </div>
             </div>
