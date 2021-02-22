@@ -86,7 +86,7 @@ define('AF_MRCAT_TEXT_DOMAIN','af_mrcat');
                   let html =  `&lta href="${response.domain}" class="digitalwind-link" rel="${response.rel}" title="${response.altOfImage}" target="${response.target}"&gt&ltp class="digitalwind-agency-text" style="text-align:center;margin:0px auto;font-size:14px"&gt${response.text}&lt/p&gt`;
                   
                   if(response.logo){
-                      html += `&ltimg class="digitalwind-agency-img" src="${response.logo}" width="${response.widthOfImage}" style="margin: 0px auto;" alt="${response.altOfImage}" /&gt&lt/a&lt`;
+                      html += `&ltimg class="digitalwind-agency-img" src="${response.logo}" width="${response.widthOfImage}" style="margin: 0px auto;" alt="${response.altOfImage}" /&gt&lt/a&gt`;
                   }else{
                       html += "&lt/a&gt";
                   }
