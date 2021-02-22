@@ -163,20 +163,20 @@ class Af_mrcat_Admin {
 		return insert_with_markers(get_home_path().'.htaccess', "httpHeader" , array() );	
 	}
 
-	public static function cors_mode_custom(){
-		
-		$sites = explode('__', preg_replace('/\s/', '__',  $this->custom_sites));
-		
-		error_log(print_r($sites, true));
-		error_log(in_array( get_http_origin(), $sites));
-		if(is_array($sites) && in_array( get_http_origin(), $sites)){
-			header(sprintf("Access-Control-Allow-Origin: %s",get_http_origin()));
-			header( 'Access-Control-Allow-Credentials: true' );
-		}
+	public static function disable_cors_mode_custom(){
+		return insert_with_markers(get_home_path().'.htaccess', "httpHeaderCustom" , array() );	
+	}
 
-		if (empty($sites)) {
-			header("Access-Control-Allow-Origin: *");
-		}
+	public static function cors_mode_custom(){
+		$lines = array();
+		
+		$lines[] = '<IfModule mod_headers.c>
+		SetEnvIf Origin "http(s)?://(www\.)?('.preg_replace('/\s+/', '|',  $this->custom_sites).')$" AccessControlAllowOrigin=$0
+		Header add Access-Control-Allow-Origin %{AccessControlAllowOrigin}e env=AccessControlAllowOrigin
+		Header merge Vary Origin
+		</IfModule>';
+		
+		return insert_with_markers(get_home_path().'.htaccess', "httpHeaderCustom" , $lines );
 
 	}
 

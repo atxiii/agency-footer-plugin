@@ -167,10 +167,11 @@ class Af_mrcat {
 
 
 		if($cors_mode == 'all'){
+			$this->loader->add_action('admin_init', $plugin_admin, 'disable_cors_mode_custom');
 			$this->loader->add_action('admin_init', $plugin_admin, 'cors_mode_all');
 		}else if($cors_mode == 'custom'){
 			$this->loader->add_action('admin_init', $plugin_admin, 'disable_cors_mode_all');
-			$this->loader->add_action('send_headers', $plugin_admin, 'cors_mode_custom');
+			$this->loader->add_action('admin_init', $plugin_admin, 'cors_mode_custom');
 		}	
 
 	}
